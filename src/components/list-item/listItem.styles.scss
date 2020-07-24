@@ -1,0 +1,72 @@
+@import "../../colors/colors";
+
+.list-item {
+  margin-bottom: 3.2rem;
+  display: flex;
+  background-color: #fff;
+  padding: 1.2rem;
+  position: relative;
+  border-radius: 4px;
+  height: 11.4rem;
+
+  .logoImage {
+    width: 9rem;
+    height: 9rem;
+    margin-right: 1.6rem;
+  }
+
+  .company-name {
+    font-weight: 500;
+    font-size: 12px;
+    margin-bottom: 0.8rem;
+    color: $text;
+  }
+
+  .position {
+    color: $text;
+    font-weight: normal;
+    font-size: 18px;
+    margin-bottom: 0.8rem;
+  }
+
+  .position-type {
+    button {
+      background-color: #fff;
+      padding: 0.6rem 0.8rem;
+      border: 1px solid $text;
+      color: $text;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+  }
+
+  .time-and-place {
+    position: absolute;
+    display: flex;
+    align-self: flex-end;
+    justify-self: flex-end;
+    right: 1.2rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: $gray;
+
+    .placeName {
+      margin-right: 2.8rem;
+      display: flex;
+      align-items: center;
+
+      .icon {
+        margin-right: 0.7rem;
+      }
+    }
+
+    .time {
+      display: flex;
+      align-items: center;
+
+      .icon {
+        margin-right: 0.7rem;
+      }
+    }
+  }
+}
