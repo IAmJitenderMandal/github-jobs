@@ -32,10 +32,10 @@
       padding-left: 1rem;
       padding-right: 1rem;
       text-transform: capitalize;
-      flex-grow: 1;
       border-radius: 4px;
       border: none;
-      font-size: 1.7rem;
+      flex-grow: 1;
+      font-size: 1.2rem;
       color: $gray;
 
       &::placeholder {
@@ -52,6 +52,59 @@
       color: #fff;
       font-size: 16px;
       line-height: 19px;
+    }
+  }
+}
+
+@media (max-width: 568px) {
+  .search {
+    .input-and-button {
+      width: 95%;
+      .search-input {
+        flex-grow: 1;
+      }
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .search {
+    .input-and-button {
+      width: 95%;
+      .search-input {
+        width: 200px;
+      }
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .search {
+    .input-and-button {
+      width: 95%;
+      .search-input {
+        width: 200px;
+      }
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .search {
+    .input-and-button {
+      .search-input {
+        width: 180px;
+      }
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .search {
+    .input-and-button {
+      .search-input {
+        width: 160px;
+      }
     }
   }
 }
