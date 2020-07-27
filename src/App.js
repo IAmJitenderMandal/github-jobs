@@ -12,20 +12,7 @@ import ViewJob from "./components/view-job/ViewJob.component";
 function App() {
   return (
     <div className="app">
-      <Layout>
-        <Logo />
-        <Search />
-        <ContentWrapper>
-          <Filters />
-          <div className="listings">
-            <ListItem />
-            <ListItem />
-            <ListItem />
-            <ListItem />
-            <ListItem />
-          </div>
-        </ContentWrapper>
-      </Layout>
+      <ViewJob />
     </div>
   );
 }

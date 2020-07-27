@@ -35,7 +35,7 @@ export default function ViewJob() {
           </div>
           <div className="job-details">
             <div className="job-title">
-              Front-End Software Engineer{" "}
+              <span class="title-text">Front-End Software Engineer</span>{" "}
               <span className="job-type">Full Time</span>
             </div>
             <div className="posted-on">
