@@ -18,6 +18,10 @@
 
   .item-details {
     flex-grow: 1;
+
+    a:link {
+      text-decoration: none;
+    }
   }
 
   .company-name {

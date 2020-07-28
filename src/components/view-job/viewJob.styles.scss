@@ -10,16 +10,19 @@
     padding-right: 5.5rem;
 
     .previous-page-link {
-      font-weight: 500;
-      font-size: 1.4rem;
-      color: $link;
-      display: flex;
-      align-items: center;
-
-      .arrow-back {
+      a {
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1.4rem;
+        color: $link;
         display: flex;
         align-items: center;
-        margin-right: 1.5rem;
+
+        .arrow-back {
+          display: flex;
+          align-items: center;
+          margin-right: 1.5rem;
+        }
       }
     }
     .title-text {
@@ -36,9 +39,11 @@
       line-height: 21px;
       font-size: 1.4rem;
       text-align: left;
+      word-wrap: break-word;
 
-      .email {
-        color: $link;
+      a {
+        color: $buttonColor;
+        text-decoration: none;
       }
     }
   }
