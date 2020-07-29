@@ -1,8 +1,36 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import "./filters.styles.scss";
 import MaterialIcon from "material-icons-react";
 
+import axios from "axios";
+
+import { JobsContext } from "../../context/context";
+import { SET_SEARCH_DATA } from "../../context/action.types";
+
 export default function Filters() {
+  const [inputText, setInputText] = useState("");
+  const { dispatch } = useContext(JobsContext);
+
+  function fetchData(Search_keyword) {
+    axios
+      .get(
+        `https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?location=${Search_keyword}`
+      )
+      .then((searchData) => {
+        dispatch({ type: SET_SEARCH_DATA, payload: searchData.data });
+        setInputText("");
+      });
+  }
+
+  function handleChange(e) {
+    setInputText(e.target.value);
+    handleSearch();
+  }
+
+  function handleSearch() {
+    fetchData(inputText);
+  }
+
   return (
     <div className="filters">
       <div className="filter-jobType">
@@ -17,6 +45,7 @@ export default function Filters() {
             type="text"
             placeholder="City, state, Zip code or country"
             className="location-search"
+            onChange={handleChange}
           />
         </div>
       </div>

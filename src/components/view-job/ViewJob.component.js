@@ -25,9 +25,9 @@ export default function ViewJob() {
 
   useEffect(() => {
     axios
-      .get(
-        `https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions/${job_id}.json`
-      )
+      .get
+      // `https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions/${job_id}.json`
+      ()
       .then(({ data }) => {
         setJob(data);
       });
