@@ -1,1 +1,9 @@
-export const SET_SEARCH_DATA = "SET_SEARCH_DATA";
+export const SET_DATA = "SET_DATA";
+export const LOCATION_SEARCH = "LOCATION_SEARCH";
+export const TYPE = "TYPE";
+export const FILTER_LOCATION = "FILTER_LOCATION";
+export const TOP_COUNTRIES = "TOP_COUNTRIES";
+export const FILTERD_DATA = "FILTERD_DATA";
+export const SEARCHED_DATA = "SEARCHED_DATA";
+export const PAGE = "PAGE";
+export const SEARCH_SPINNER = "SEARCH_SPINNER";

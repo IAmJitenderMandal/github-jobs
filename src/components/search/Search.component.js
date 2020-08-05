@@ -1,5 +1,5 @@
-import React, { useState, useContext } from "react";
-import { SET_SEARCH_DATA } from "../../context/action.types";
+import React, { useState, useContext, useEffect } from "react";
+import { SET_DATA, SEARCH_SPINNER } from "../../context/action.types";
 
 //importing  material icon package
 import MaterialIcon from "material-icons-react";
@@ -10,7 +10,7 @@ import "./search.styles.scss";
 
 export default function Search() {
   const [inputText, setInputText] = useState("");
-  const { dispatch } = useContext(JobsContext);
+  const { appState, dispatch } = useContext(JobsContext);
 
   function fetchData(Search_keyword) {
     axios
@@ -18,7 +18,11 @@ export default function Search() {
         `https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?description=${Search_keyword}`
       )
       .then((searchData) => {
-        dispatch({ type: SET_SEARCH_DATA, payload: searchData.data });
+        dispatch({
+          type: SEARCH_SPINNER,
+          payload: false,
+        });
+        dispatch({ type: SET_DATA, payload: searchData.data });
         setInputText("");
       });
   }
@@ -31,6 +35,12 @@ export default function Search() {
     fetchData(inputText);
   }
 
+  useEffect(() => {
+    if (inputText) {
+      handleSearch();
+    }
+  }, [appState.search_spinner]);
+
   return (
     <div className="search">
       <div className="input-and-button">
@@ -42,8 +52,20 @@ export default function Search() {
           onChange={handleChange}
           value={inputText}
         />
-        <button className="search-btn" onClick={handleSearch}>
-          Search
+        <button
+          className="search-btn"
+          onClick={() => {
+            dispatch({
+              type: SEARCH_SPINNER,
+              payload: true,
+            });
+          }}
+        >
+          {appState.search_spinner === true ? (
+            <span className="spinner"></span>
+          ) : (
+            "Search"
+          )}
         </button>
       </div>
     </div>

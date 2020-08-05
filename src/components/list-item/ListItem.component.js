@@ -28,7 +28,6 @@ export default function ListItem({ eachJob }) {
         </div>
         <div className="time">
           {" "}
-          1{" "}
           <span className="icon">
             {" "}
             <MaterialIcon icon="watch_later" color="#b9bdcf" size={15} />{" "}

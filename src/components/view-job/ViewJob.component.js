@@ -25,9 +25,9 @@ export default function ViewJob() {
 
   useEffect(() => {
     axios
-      .get
-      // `https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions/${job_id}.json`
-      ()
+      .get(
+        `https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions/${job_id}.json`
+      )
       .then(({ data }) => {
         setJob(data);
       });
@@ -40,7 +40,7 @@ export default function ViewJob() {
         <ContentWrapper>
           <div className="sidebar">
             <div className="previous-page-link">
-              <Link onClick={handleClick}>
+              <Link to="" onClick={handleClick}>
                 {" "}
                 <span className="arrow-back">
                   <MaterialIcon
