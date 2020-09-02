@@ -7,3 +7,4 @@ export const FILTERD_DATA = "FILTERD_DATA";
 export const SEARCHED_DATA = "SEARCHED_DATA";
 export const PAGE = "PAGE";
 export const SEARCH_SPINNER = "SEARCH_SPINNER";
+export const SPINNER = "SPINNER";

@@ -37,6 +37,7 @@ function App() {
     berlin: false,
     loadMoreData: 1,
     no_data: false,
+    spinner: true,
     search_spinner: false,
     data_loading_spinner: true,
   };
@@ -82,7 +83,6 @@ function App() {
                 <Search />
                 <ContentWrapper>
                   <Filters />
-                  {console.log(appState)}
                   <div className="listings">
                     {appState.filterdData.map((eachJob) => (
                       <ListItem eachJob={eachJob} key={eachJob.id} />

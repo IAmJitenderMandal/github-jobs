@@ -1,6 +1,7 @@
 import {
   SET_DATA,
   SEARCH_SPINNER,
+  SPINNER,
   SEARCHED_DATA,
   FILTER_LOCATION,
   TOP_COUNTRIES,
@@ -42,6 +43,11 @@ const jobsReducer = (state, action) => {
         search_spinner: action.payload,
       };
 
+    case SPINNER:
+      return {
+        ...state,
+        spinner: action.payload,
+      };
     case TYPE:
       return { ...state, type: action.payload };
 
